@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { StoreModule } from '@ngrx/store';
 import { CustomerViewComponent } from './customer-view/customer-view.component';
 import { CustomerAddComponent } from './customer-add/customer-add.component';
-
-
+import { customerFeatureKey, reducer } from './store/reducer/customer.reducer';
 
 @NgModule({
   declarations: [CustomerViewComponent, CustomerAddComponent],
-  imports: [
-    CommonModule
-  ]
+  imports: [CommonModule, StoreModule.forFeature(customerFeatureKey, reducer)],
+  exports: [CustomerViewComponent, CustomerAddComponent],
 })
-export class CustomerModule { }
+export class CustomerModule {}

@@ -14,7 +14,7 @@ export const initialState: CustomerState = {
 
 export const customerReducer = createReducer(
   initialState,
-  on(CustomerActions.addCustomers, (state: CustomerState, { customer }) => ({
+  on(CustomerActions.addCustomer, (state: CustomerState, { customer }) => ({
     ...state,
     customers: [...state.customers, customer],
   }))
